@@ -6,7 +6,7 @@
 #    By: daviles- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/21 14:00:44 by daviles-          #+#    #+#              #
-#    Updated: 2023/10/19 20:16:09 by daviles-         ###   ########.fr        #
+#    Updated: 2023/10/25 23:11:44 by daviles-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ OBJS_BONUS = $(MAIN_BONUS:.c=.o) $(SRC_BONUS:.c=.o) $(SRC:.c=.o)
 
 CC	= gcc
 
-CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror #º-O3 -fsanitize=address -g3
 
 COMP = $(CC) $(CFLAGS) $(LIB) 
 
@@ -65,17 +65,15 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(MAKE) bonus -sC ./libft
 	$(COMP) $(OBJ) -o $@
-	@echo "$(GREEN)\n Push_Swap is ready to go!$(NOC)"
+	@echo "$(GREEN)\n Pipex is ready to go!$(NOC)"
 	@echo "$(YELLOW)    _       _       _"
 	@echo " __(.)<  __(.)>  __(.)="
 	@echo " \___)   \___)   \___)$(NOC)"
 	@echo "$(GREEN)\nProgram is ready to use! Run ./pipex to see instructions.\n$(NOC)"
 
-bonus : $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJS_BONUS)
+bonus : $(OBJS_BONUS)
 	$(MAKE) bonus -sC ./libft
-	$(COMP) $(OBJS_BONUS) -o $@
+	$(COMP) $(OBJS_BONUS) -o pipex
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
