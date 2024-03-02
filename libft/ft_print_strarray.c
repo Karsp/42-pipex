@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_print_strarray.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 21:46:49 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/06 19:19:50 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/29 20:17:15 by daviles-          #+#    #+#             */
+/*   Updated: 2024/03/03 00:09:12 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//Sends the string ’s’ to the specified file descriptor
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_print_strarray(char **array)
 {
-	int	c;
+	int	i;
 
-	c = 0;
-	while (s[c] != '\0')
+	i = 0;
+	if (!*array || !array)
+		return ;
+	while (array[i])
 	{
-		write(fd, &s[c], 1);
-		c++;
+		ft_printf("%s\n", array[i]);
+		i++;
 	}
 }
-/*
-int	main(void)
-{
-	char	s[] = "52 amantes a través del espejo\n";
-	int		fd = 1;
-
-	ft_putstr_fd(s, fd);
-	return (0);
-}
-*/

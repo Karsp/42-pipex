@@ -6,10 +6,10 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 14:43:19 by daviles-          #+#    #+#             */
-/*   Updated: 2023/08/31 20:32:21 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:25:45 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
+#include "libft.h"
 //It takes a ’lst’ node as a parameter and frees the memory of the contents 
 //using the ’del’ function given as a parameter, in addition to freeing the 
 //node. The memory of 'next' should not be freed.

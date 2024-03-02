@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: daviles- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: daviles- <daviles-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 17:55:22 by daviles-          #+#    #+#              #
-#    Updated: 2023/10/19 13:39:10 by daviles-         ###   ########.fr        #
+#    Updated: 2024/03/03 00:48:16 by daviles-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC = ft_isprint.c ft_memmove.c ft_strrchr.c \
 	  ft_strjoin.c ft_strtrim.c ft_split.c ft_freematrix.c\
 	  ft_itoa.c ft_strmapi.c ft_striteri.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	  ft_putnbr_fd.c ft_absolute_value.c
+	  ft_putnbr_fd.c ft_absolute_value.c ft_strposchr.c \
+	  ft_print_strarray.c
 
 BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 	   ft_lstsize_bonus.c ft_lstlast_bonus.c \
@@ -36,9 +37,7 @@ BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 
 PRINTF	=	./ft_printf/ft_printf.c ./ft_printf/ft_printf_utils.c
 
-GNL = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c
-
-OBJ = $(SRC:.c=.o) $(PRINTF:.c=.o) $(GNL:.c=.o)
+OBJ = $(SRC:.c=.o) $(PRINTF:.c=.o)
 
 BOBJ = $(BSRC:.c=.o)
 
@@ -56,7 +55,8 @@ all : $(NAME)
 $(NAME) : $(OBJ) $(INCLUDE)
 	$(AR) $(NAME) $(OBJ)
 
-bonus :	$(OBJ) $(BOBJ)  
+
+bonus :	$(OBJ) $(BOBJ) 
 	$(AR) -r $(NAME) $?
 
 %.o : %.c

@@ -6,18 +6,18 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:12:49 by daviles-          #+#    #+#             */
-/*   Updated: 2023/09/29 02:03:51 by daviles-         ###   ########.fr       */
+/*   Updated: 2024/03/03 00:24:12 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include<stdlib.h>
-# include<string.h>
-# include<stdio.h>
-# include<unistd.h>
-# include"ft_printf/libftprintf.h"
-# include"gnl/get_next_line.h"
+# include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
+# include <unistd.h>
+# include "ft_printf/libftprintf.h"
+# include "gnl/get_next_line.h"
 
 typedef struct s_list
 {
@@ -25,11 +25,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-long	ft_absolute_value(long nbr);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
-int		ft_isspace(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
@@ -48,9 +46,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *str);
-long	ft_atol(const char *str);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_freematrix(char ***matrix);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -72,6 +68,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+// newst
+int		ft_isspace(int c);
+long	ft_absolute_value(long nbr);
+long	ft_atol(const char *str);
 void	my_tolower(unsigned int c, char *s);
 void	my_toupper(unsigned int c, char *s);
+void	ft_freematrix(char ***matrix);
+void	ft_print_strarray(char **array);
 #endif

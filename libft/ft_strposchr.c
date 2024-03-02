@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_strposchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: daviles- <daviles-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:35:47 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/24 14:48:47 by daviles-         ###   ########.fr       */
+/*   Updated: 2024/03/03 00:11:08 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 //The strchr() function locates the first occurrence of c (converted to a 
 //char) in the string pointed to by s.  The terminating null character is
 // considered to be part of the string; therefore if c is `\0', the functions
 // locate the terminating `\0'.
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strposchr(const char *s, int c)
 {
-	int		count;
+	int	count;
 
 	count = 0;
-	while (((char *) s)[count] != '\0')
+	if (s)
 	{
-		if (((char *) s)[count] == ((char) c))
-			return (&((char *) s)[count]);
-		count++;
+		while (((char *) s)[count] != '\0')
+		{
+			if (((char *) s)[count] == (char) c)
+				return (count);
+			count++;
+		}
 	}
-	if ((char) c == '\0')
-		return (&((char *) s)[count]);
-	return (0);
+	return (-1);
 }
-/*
-int	main(void)
-{
-	char	s[] = "hola";
-	int		c;
-
-	c = 0;
-	printf("%s\n", ft_strchr(s, c));
-//	printf("%s\n", strchr(s, c));
-	return (0);
-}
-*/
